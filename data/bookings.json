@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "doctorId": 4,
+    "date": "2025-08-09",
+    "slot": "10:00",
+    "patientName": "amalkrishna",
+    "patientPhone": "7012223194",
+    "notes": "",
+    "createdAt": "2025-08-08T06:00:32.650Z"
+  },
+  {
+    "id": 2,
+    "doctorId": 6,
+    "date": "2025-08-09",
+    "slot": "10:00",
+    "patientName": "aldrin",
+    "patientPhone": "",
+    "notes": "",
+    "createdAt": "2025-08-08T06:18:49.705Z"
+  }
+]

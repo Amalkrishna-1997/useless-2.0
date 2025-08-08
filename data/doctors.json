@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Dr. Anita Sharma", "specialization": "Cardiology", "experience": "10 yrs" },
+  { "id": 2, "name": "Dr. Ramesh Iyer", "specialization": "Orthopedics", "experience": "8 yrs" },
+  { "id": 3, "name": "Dr. Priya Nair", "specialization": "Pediatrics", "experience": "6 yrs" },
+  { "id": 4, "name": "Dr. Vikram Singh", "specialization": "Dermatology", "experience": "12 yrs" },
+  { "id": 5, "name": "Dr. Neha Gupta", "specialization": "Gynecology", "experience": "9 yrs" },
+  { "id": 6, "name": "Dr. Arjun Mehta", "specialization": "Neurology", "experience": "15 yrs" },
+  { "id": 7, "name": "Dr. Sita Rao", "specialization": "General Medicine", "experience": "7 yrs" },
+  { "id": 8, "name": "Dr. Karan Desai", "specialization": "Ophthalmology", "experience": "5 yrs" },
+  { "id": 9, "name": "Dr. Meera Patel", "specialization": "ENT", "experience": "11 yrs" },
+  { "id": 10, "name": "Dr. Rahul Kapoor", "specialization": "Psychiatry", "experience": "14 yrs" }
+]
