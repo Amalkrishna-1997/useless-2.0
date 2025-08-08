@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Care Hospital Token Booking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Health Care Hospital - Thrissur</h1>
+    <form id="bookingForm">
+        <label>Patient Name:</label>
+        <input type="text" id="patientName" required><br>
+
+        <label>Select Doctor:</label>
+        <select id="doctor" required>
+            <option value="Dr. Rajesh">Dr. Rajesh</option>
+            <option value="Dr. Meera">Dr. Meera</option>
+            <option value="Dr. Arun">Dr. Arun</option>
+        </select><br>
+
+        <label>Date:</label>
+        <input type="date" id="date" required><br>
+
+        <label>Time Slot:</label>
+        <select id="timeSlot" required>
+            <option value="9:00 AM - 9:30 AM">9:00 AM - 9:30 AM</option>
+            <option value="9:30 AM - 10:00 AM">9:30 AM - 10:00 AM</option>
+            <option value="10:00 AM - 10:30 AM">10:00 AM - 10:30 AM</option>
+        </select><br>
+
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    <div id="confirmation" style="display:none; margin-top:20px; border:1px solid #000; padding:10px;">
+        <h2>Booking Confirmation</h2>
+        <p id="details"></p>
+    </div>
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const patientName = document.getElementById('patientName').value;
+    const doctor = document.getElementById('doctor').value;
+    const date = document.getElementById('date').value;
+    const timeSlot = document.getElementById('timeSlot').value;
+
+    const res = await fetch('http://localhost:3000/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ patientName, doctor, date, timeSlot })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+        document.getElementById('confirmation').style.display = 'block';
+        document.getElementById('details').innerHTML =
+            `<strong>Patient:</strong> ${data.patientName}<br>
+             <strong>Doctor:</strong> ${data.doctor}<br>
+             <strong>Date:</strong> ${data.date}<br>
+             <strong>Time Slot:</strong> ${data.timeSlot}<br>
+             <strong>Token Number:</strong> ${data.tokenNumber}`;
+    } else {
+        alert(data.message);
+    }
+});
+</script>
+</body>
+</html>
